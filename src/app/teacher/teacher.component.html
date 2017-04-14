@@ -1,0 +1,51 @@
+<md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+
+
+  <div layout="row" layout-margin>
+    <md-input-container flex>
+      <input mdInput placeholder="Name" [(ngModel)]="teacher.name">
+    </md-input-container>
+
+  </div>
+
+  <div layout="row" layout-margin>
+    <md-input-container flex>
+      <input mdInput placeholder="Email" value="Email" [(ngModel)]="teacher.email">
+    </md-input-container>
+  </div>
+  <div layout="row" layout-margin>
+    <md-input-container flex>
+      <input mdInput placeholder="Phone" value="Phone" [(ngModel)]="teacher.phone">
+    </md-input-container>
+  </div>
+
+  <div layout="row" layout-margin>
+    <md-input-container flex>
+      <input mdInput placeholder=" Salary" value="Salary" [(ngModel)]="teacher.salary">
+    </md-input-container>
+
+      <div layout="row" layout-margin>
+        <md-select flex="50" placeholder="Select Subject" [(ngModel)]="teacher.subject" name="Subject">
+          <md-option *ngFor="let subject of subjects" [value]="subject.id">
+            {{subject.name}}
+          </md-option>
+        </md-select>
+      </div>
+   
+
+  </div>
+  <div layout="row" layout-margin>
+    <md-input-container flex>
+      <textarea mdInput #postalCode  placeholder="Address" value="Address" [(ngModel)]="teacher.address"></textarea>
+    <ng-select
+                [options]="OPTIONS_BASIC"
+                filterPlaceholder="Type to filter">
+            </ng-select>
+    </md-input-container>
+  </div>
+  <div layout="row" layout-margin>
+
+    <button md-raised-button color="accent" class="text-upper" (click)="save()" style="margin: 8px;">Submit</button>
+
+</div>
+</md-card>
